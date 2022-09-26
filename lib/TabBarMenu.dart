@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'WebViewExample.dart';
+import 'SMSView.dart';
 
 class TabBarMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: DefaultTabController(
         length: 5,
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.music_note)),
-                Tab(icon: Icon(Icons.music_video)),
-                Tab(icon: Icon(Icons.camera_alt)),
+                Tab(icon: Icon(Icons.info_outline)),
+                Tab(icon: Icon(Icons.wechat)),
+                Tab(icon: Icon(Icons.web)),
                 Tab(icon: Icon(Icons.grade)),
-                Tab(icon: Icon(Icons.email)),
               ],
             ),
             title: Text('Demo de mis tabs'),
@@ -23,11 +24,10 @@ class TabBarMenu extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              WebViewExample('https://www.bbc.co.uk'),
-              WebViewExample('https://www.milenio.com'),
-              WebViewExample('https://www.reforma.com'),
               Icon(Icons.grade),
-              Icon(Icons.email),
+              SMSView(),
+              WebViewExample('https://sushiroll.com.mx/'),
+              Icon(Icons.grade),
             ],
           ),
         ),
