@@ -59,6 +59,7 @@ class _SMSViewState extends State<SMSView>{
       home: Scaffold(
           appBar: AppBar(
             title: Text('Comunicate con nosotros'),
+            backgroundColor: Colors.green,
           ),
           body: Center(
               child: Column(children: <Widget>[
