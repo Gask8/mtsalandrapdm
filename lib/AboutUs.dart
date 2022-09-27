@@ -8,7 +8,6 @@ class AboutUs extends StatefulWidget {
 }
 
 class _AboutUsState extends State<AboutUs> {
-  String emoji = '😋';
   Color bgcolor = Colors.grey;
 
   @override
@@ -17,41 +16,38 @@ class _AboutUsState extends State<AboutUs> {
       debugShowCheckedModeBanner: false,
         home: Scaffold(
             backgroundColor: bgcolor,
-
               appBar: AppBar(
                 title: const Text('Información General'),
                 backgroundColor: Colors.green,
               ),
-            resizeToAvoidBottomInset: false,
-              body: Container(
-                  alignment: Alignment.center,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-                  width: double.infinity,
-                  height: double.infinity,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text('SushiRoll, una Delisia ', style: const TextStyle(fontSize: 50)),
-                      Text(
-                        emoji,
-                        style: const TextStyle(fontSize: 22),
-                      ),
-                      const SizedBox(height: 20),
-                      const Text('64 ºC', style: const TextStyle(fontSize: 80)),
-                      const Spacer(),
-                      Image(
-                          image: new ExactAssetImage("assets/img1.jpg"),
-                          height: 200.0,
-                          width: 300.0,
-                          alignment: FractionalOffset.center
-                      ),const Spacer(),
-                      Image(
-                          image: new ExactAssetImage("assets/img2.png"),
-                          height: 200.0,
-                          width: 300.0,
-                          alignment: FractionalOffset.center
-                      ),
-                    ],
-            ))));
+              body: ListView(
+                  padding: EdgeInsets.all(15),
+                  children: [
+                    const SizedBox(height: 20),
+                    const Text('SushiRoll 😋', style: const TextStyle(fontSize: 50)),
+                    const SizedBox(height: 20),
+                    const Text('Comprometidos con la innovación y la calidad ofrecemos a nuestros clientes un espacio diferente donde el sabor y el servicio generan una experiencia de emociones y sensaciones únicas.',
+                        style: const TextStyle(fontSize: 20)),
+                    const SizedBox(height: 20),
+                    Image(
+                        image: new ExactAssetImage("assets/img1.jpg"),
+                        width: 200,
+                        height: 200,
+                        alignment: FractionalOffset.center),
+                    const SizedBox(height: 20),
+                    const Text('Visión', style: const TextStyle(fontSize: 40)),
+                    const Text('Ser reconocidos como la marca líder en comida japonesa por su excelencia en servicio, innovación y calidad, gracias a nuestros colaboradores y valores institucionales lo que nos perfila a mercados internacionales.',
+                        style: const TextStyle(fontSize: 20)),
+                    const SizedBox(height: 20),
+                    Image(
+                        image: new ExactAssetImage("assets/img2.png"),
+                        width: 200,
+                        height: 200,
+                        alignment: FractionalOffset.center),
+                    const SizedBox(height: 20),
+                  ]
+              )
+        )
+    );
   }
 }
